@@ -1,0 +1,33 @@
+## Problem
+Given an integer x, return true if x is palindrome integer.
+
+An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
+
+## Example
+```bash
+Input: x = 121
+Output: true
+```
+
+## Solution
+```python
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x<0:
+            return False
+
+        reversedList = []
+        while(x):
+            reversedList .append(x%10)
+            x = x//10
+        
+        if(reversedList == reversedList[::-1]):
+            return True
+        else:
+            return False
+```
+Time: 160 ms, Space:12.9MB
