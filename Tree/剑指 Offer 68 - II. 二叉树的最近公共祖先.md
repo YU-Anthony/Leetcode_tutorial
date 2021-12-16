@@ -22,3 +22,30 @@ Example 2:
 输出: 5
 解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
 ```
+# Answer
+我们要考虑这么几种情况
+1. 如果 root 是 None, 则返回 root (None)
+2. 如果 root 等于 p,q 中任意一个，则返回 root
+3. 如果 root 不等于 p,q 中任何一个，则：
+  a. 如果左子树没找到，则在右子树中，返回 lowestCommonAncestor(root.right, p , q)
+  b. 如果右子树没找到，则在左子树中，返回 lowestCommonAncestor(root.left, p , q)
+  c. 如果左右子树分别找到，则返回 root
+  
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def lowestCommonAncestor(self, root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:
+        if not root or root==p or root==q:
+            return root
+
+        left = self.lowestCommonAncestor(root.left,p,q)
+        right = self.lowestCommonAncestor(root.right,p,q)
+
+        return root if left and right else left or right
+```
