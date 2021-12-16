@@ -27,12 +27,9 @@ Example 2:
 1. 如果 root 是 None, 则返回 root (None)
 2. 如果 root 等于 p,q 中任意一个，则返回 root
 3. 如果 root 不等于 p,q 中任何一个，则：
-
-  a. 如果左子树没找到，则在右子树中，返回 lowestCommonAncestor(root.right, p , q)
-  
-  b. 如果右子树没找到，则在左子树中，返回 lowestCommonAncestor(root.left, p , q)
-  
-  c. 如果左右子树分别找到，则返回 root
+  - 如果左子树没找到，则在右子树中，返回 lowestCommonAncestor(root.right, p , q)
+  - 如果右子树没找到，则在左子树中，返回 lowestCommonAncestor(root.left, p , q)
+  - 如果左右子树分别找到，则返回 root
   
 ```python
 # Definition for a binary tree node.
