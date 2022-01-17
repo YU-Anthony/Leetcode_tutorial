@@ -7,7 +7,7 @@
 - 优先刷题号靠前的题目；
 - 优先刷点赞较多的题目；
 
-Code now !
+Code now ! Day Day up!
 
 目前的进度：
 感觉树结构在慢慢熟悉，BFS/DFS中 DFS还不太熟，
