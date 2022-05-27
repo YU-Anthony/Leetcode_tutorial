@@ -33,3 +33,6 @@ class Solution:
                 ret += right-left+1
         return ret
 ```
+
+TC: O(n) 其中 n 是数组 nums 的长度。两个端点 i 和 j 的增加次数都不超过 n。
+SC: O(1)
