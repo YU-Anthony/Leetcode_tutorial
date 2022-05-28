@@ -40,7 +40,16 @@ class Solution:
 具体分析：滑动窗口向右移动右指针以增加值，向右移动左指针以减小值，但当出现负数的时候，**每一次加入值不一定会增加总体的大小，每一次减去值不一定减小总体的大小**，因此`滑动窗口`的方法在这里不可取！
 
 下面是正确解法：
-有点绕
+
+⚠️前方预警：有点绕
+
+题目让我们求连续子数组的和为`k`的个数。在前缀
+以Example1为例, 子数组[i+1,i+2]（这里是前闭后闭）的和其实相当于 prefix_arr[i+2]-prefix_arr[i] 的差值。那么题意中找到子数组的和为k的子数组个数其实就是让我们找 prefix_arr[j]-prefix_arr[i] == k 的子数组的个数，换个角度思考就是找 prefix_arr[i]==prefix_arr[j]-k 的个数，这里的 j 可以为 i+2 也可能为任何值。
+```bash
+              i i+1 i+2
+origin_arr    1  1  1
+prefix_arr    1  2  3
+```
 ```python
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
