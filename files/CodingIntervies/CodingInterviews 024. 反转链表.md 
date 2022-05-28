@@ -1,0 +1,49 @@
+# Problems
+给定单链表的头节点 head ，请反转链表，并返回反转后的链表的头节点。
+
+Example 1:
+![](https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg)
+```bash
+输入：head = [1,2,3,4,5]
+输出：[5,4,3,2,1]
+```
+
+Example 2:
+![](https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg)
+```bash
+输入：head = [1,2]
+输出：[2,1]
+```
+
+Example 3:
+```bash
+输入：head = []
+输出：[]
+```
+
+# Answer
+简单题简单解决，递归或迭代都可以解决。
+```python3
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        # # Solution 1: 迭代
+        # prev, curr = None, head
+
+        # while curr:
+        #     nxt = curr.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = nxt
+        # return prev
+
+        # Solution 2: 递归
+        if not head or not head.next:
+            return head
+        # 得到翻转后的链表
+        node = self.reverseList(head.next)
+        # 进行链表翻转
+        head.next.next = head
+        head.next = None
+
+        return node
+```
