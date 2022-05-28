@@ -50,6 +50,9 @@ class Solution:
 origin_arr    1  1  1
 prefix_arr    1  2  3
 ```
+再换个角度思考，被减数-减数=k， 求k的个数及求减数(被减数-k)的个数，
+
+在下面的例子中，被减数是我们每一步更新的 pre_sum，减数是历史记录里的(被减数-k)
 ```python
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
