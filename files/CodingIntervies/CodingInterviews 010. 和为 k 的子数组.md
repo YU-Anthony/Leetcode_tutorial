@@ -64,3 +64,12 @@ class Solution:
             pre_dict[pre_sum] = pre_dict.get(pre_sum,0)+1
         return ret
 ```
+
+nums = [1, 1, 2, 1, 5]
+k = 2
+pre_sum     ret     pre_dict
+    1       0       {0:1, 1:1}
+    2       1       {0:1, 1:1, 2:1}
+    4       2       {0:1, 1:1, 2:1, 4:1}
+    5       2       {0:1, 1:1, 2:1, 4:1, 5:1}
+    10      2       {0:1, 1:1, 2:1, 4:1, 5:1, 10:1}
