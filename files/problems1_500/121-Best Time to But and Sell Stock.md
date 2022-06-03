@@ -14,7 +14,7 @@ Note that buying on day 2 and selling on day 1 is not allowed because you must b
 ```
 
 ## Solution
-**Dynamic programming**
+### Solution 1: 一次遍历
 ![avatar](https://pic.leetcode-cn.com/4eaadab491f2bf88639d66c9d51bb0115e694ae08d637841ac18172b631cb21f-0121.gif)
 ```python
 class Solution(object):
@@ -31,3 +31,41 @@ class Solution(object):
             
         return maxProfit
 ```
+- TC: O(n)
+- SC: O(1)
+
+### Solution 2: Dynamic Programming
+
+Step 1: 定义状态
+
+定义状态 `dp[i]` 表示到下标为 i 这一天我们获得的最大收益
+
+Step 2: 确定状态转移方程
+```
+dp[i] = max(dp[i - 1], prices[i] - minprice)
+```
+第 i 天的最大收益需要比较前 i-1 天的最大收益和第 i 天的收益。
+
+Step 3: 确定初始值
+```
+dp[0] = 0 
+minPrice = prices[0]
+```
+第一天还没有交易, 所以我们的收益为 0
+
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        minPrice = prices[0]
+        
+        dp = [0]*len(prices)
+        
+        for i in range(1, len(prices)):
+            minPrice = min(minPrice, prices[i])
+            dp[i] = max(dp[i-1], prices[i] - minPrice)
+        return dp[-1]
+```
+
+- TC: O(n)
+- SC: O(n)
