@@ -1,0 +1,89 @@
+# Problem
+Given an integer n, return the number of prime numbers that are strictly less than n.
+
+Example 1:
+```bash
+Input: n = 10
+Output: 4
+Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+```
+
+Example 2:
+```bash
+Input: n = 0
+Output: 0
+```
+
+Example 3:
+```bash
+Input: n = 1
+Output: 0
+```
+
+# Answer
+首先，暴力破解法在这里肯定行不通的，铁超时。
+
+今天要介绍的方法是`埃氏筛`。其主要思想是：对于一个质数`x`，它的倍数比如`2x`,`3x`,`4x`等等肯定不是质数。
+
+那么我们可以先创建一个元素都为`1`的数组，从头开始遍历，将每一位质数的倍数都设置为`0`即非质数。
+```python
+isPrime = [1]*n
+
+for i in range(2, n):
+    if isPrime[i]:
+        for j in range(2 * i, n, i):
+            isPrime[j] == 0
+```
+
+仔细思考一下，上面的外循环其实可以优化。`i`不需要遍历到`n`，只需要遍历到`sqrt(n)`即可。比方说，假设 n = 12。
+```
+12 = 2 × 6
+12 = 3 × 4
+12 = sqrt(12) × sqrt(12)
+12 = 4 × 3
+12 = 6 × 2
+```
+`2`的倍数`2 * 6`和`6`的倍数`6 * 2`是将同一个数变成`非质数`。那么如果在 [2,sqrt(n)] 这个区间之内没有发现可整除因子，就可以直接断定 n 是素数了，因为在区间 [sqrt(n),n] 也一定不会发现可整除因子。
+
+所以由于因子的对称性，其中的外循环只需要遍历 [2,sqrt(n)] 就够了。
+
+所以上述代码可以优化为:
+```python
+isPrime = [1]*n
+
+i = 2
+while i < sqrt(n):
+    if isPrime[i]:
+        for j in range(2 * i, n, i):
+            isPrime[j] == 0
+    i += 1
+```
+
+对于内循环，我们也可以进行优化，比方说当`i = 6`时，`j`从`6 * 2`开始遍历，但`6 * 2`这个数早就在`i = 2`时的内循环中遍历过，因此内循环可以直接从`i * i`开始遍历。所以这一步优化可以是：
+```python
+i = 2
+while i < sqrt(n):
+    if isPrime[i]:
+        for j in range(i * i, n, i):
+            isPrime[j] = 0
+    i += 1
+```
+
+那么最终的答案就是:
+```python
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        isPrime = [1]*n
+
+        i = 2
+        while i < sqrt(n):
+            if isPrime[i]:
+                for j in range(i * i, n, i):
+                    isPrime[j] = 0
+            i += 1
+        ans = 0
+        for i in range(2, n):
+            if isPrime[i]:
+                ans += 1
+        return ans
+```
