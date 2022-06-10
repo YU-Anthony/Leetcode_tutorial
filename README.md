@@ -10,7 +10,6 @@
 Code now ! Day Day up!
 
 目前的进度：
-感觉树结构在慢慢熟悉，BFS/DFS中 DFS还不太熟，
-滑动窗口、双指针有待加强，动态规划基本没练过,有点难
+Top Interview Questions ing
 
 继续加油!
