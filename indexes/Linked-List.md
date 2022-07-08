@@ -1,5 +1,6 @@
 > 参考资料：
 > 1. [代码随想录-链表总结篇](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/%E9%93%BE%E8%A1%A8%E6%80%BB%E7%BB%93%E7%AF%87.md)
+> 2. [力扣刷题总结之链表](https://leetcode.cn/circle/article/YGr54o/)
 
 # 1. 理论基础
 - 链表的种类：单向链表，双向链表，循环链表
@@ -29,11 +30,21 @@
 
 反转链表考的频次非常高，我觉得`迭代法`和`递归法`都需要掌握
 
+### 链表相交
+> [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+
+思路就是先移动头节点使得两条链表剩余的长度一样，然后同时移动两条链表的头指针，如果存在链表相交的情况，那两个头节点一定会同时走到相同的位置。
+
 ### 合并多条链表
 > [21. Merged Two Sorted List](https://leetcode.com/problems/merge-two-sorted-lists/) <br>
 > [23. Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 `21题` 就是常规的用`迭代`和`递归`去解决，`23题` 虽然是`hard`,但其实这道题的思路很简单，就是俩俩先合并，直到合并到最后只剩一个 list。
+
+### 链表分解
+> [86. Partition List](https://leetcode.com/problems/partition-list/)
+
+前面我们做过了合并链表，今天这道题的思想则是`分解链表`。具体来说就是将原链表分成两个小链表，一个链表的元素都小于x,另一个链表的元素都大于等于x,最后将两个链表合并起来。但要注意`虚拟头节点`的运用。
 
 ### 寻找链表中点 + 反转链表 + 合并链表
 > [143.Reorder List](https://leetcode.cn/problems/reorder-list/)
