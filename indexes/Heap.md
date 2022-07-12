@@ -41,3 +41,6 @@
 `最小堆`, `bucket sort`。这道题要求出现频率前k高的元素，我们可以用 `hashtable`来存各个元素的频数，然后用大小为k的「最小堆」去存各个元素，最后堆内即为较大的 k 个元素。
 
 ⚠️ 这道题的「桶排序」方法也要掌握
+> [692.Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
+
+这道题和`347`很像，但是要注意字典排序
