@@ -44,3 +44,8 @@
 > [692.Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
 
 这道题和`347`很像，但是要注意字典排序
+
+> [451.Sort Characters By Frequency(https://leetcode.com/problems/sort-characters-by-frequency/)
+
+- hashmap to store frequency
+- heap to get the most frequent chars ony by one
