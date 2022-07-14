@@ -45,7 +45,27 @@
 
 这道题和`347`很像，但是要注意字典排序
 
-> [451.Sort Characters By Frequency(https://leetcode.com/problems/sort-characters-by-frequency/)
+> [451.Sort Characters By Frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
 
 - hashmap to store frequency
 - heap to get the most frequent chars ony by one
+
+> [857. Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)
+
+`hard`
+
+### 第 K 大元素
+> [703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+
+求数据流中第 K 大元素。一个大小为 K 的最小堆存较大的 K 个数，小于堆顶元素则放弃，大于堆顶元素则入堆，堆顶即为第 K 大元素。
+> [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+
+Similar to `703`, pay attention to `quick sort` method
+
+> [378. Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+
+在二维矩阵中找第K小的数。同样是找第K小的数，只是变为了二维数组，用一个大小为K存较小元素的大顶堆，小于堆顶的元素可以入堆，遍历完后堆顶即为结果。Be careflul the way to construct heap
+
+> [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)
+
+求返回第 n 个丑数。暴力破解求前 n 个丑数，放到大小为 n 的堆中，堆顶即为第 n 个丑数。
