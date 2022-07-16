@@ -69,3 +69,21 @@ Similar to `703`, pay attention to `quick sort` method
 > [264. Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)
 
 求返回第 n 个丑数。暴力破解求前 n 个丑数，放到大小为 n 的堆中，堆顶即为第 n 个丑数。
+
+> [313. Super Ugly Number](https://leetcode.com/problems/super-ugly-number/)
+
+跟上面这道题几乎一样，只是质因子的定义不同了
+
+### 找中位数
+> [295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+
+求数据流中的中位数。其实中位数问题只是特殊的`第k大元素的问题`。构造一个最小堆（存大于等于中位数的所有数）和一个最大堆（存小于等于中位数的所有数），保持最小堆的元素数量最多比最大堆的元素数量多1. 那么最后中位数就是两堆堆顶的平均值或者，最小堆的堆顶。
+
+### 堆排序
+> [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/)
+
+`medium`. 每次选最大的两块石头粉碎，为了实现每次都取到最大的石头，我们用`heap`数据结构
+
+> [355.Design Twitter](https://leetcode.com/problems/design-twitter/)
+
+`hard`。 用`heap`结构来表示最近访问的 tweets.
