@@ -50,7 +50,7 @@ class Solution:
 origin_arr    1  1  1
 prefix_arr    1  2  3
 ```
-再换个角度思考，被减数-减数=k， 求k的个数及求减数(被减数-k)的个数，
+再换个角度思考，被减数-减数=k， 求k的个数即求减数(被减数-k)的个数，
 
 在下面的例子中，被减数是我们每一步更新的 pre_sum，减数是历史记录里的(被减数-k)
 ```python
@@ -64,7 +64,7 @@ class Solution:
             pre_dict[pre_sum] = pre_dict.get(pre_sum,0)+1
         return ret
 ```
-
+```
 nums = [1, 1, 2, 1, 5]
 k = 2
 pre_sum     ret     pre_dict
@@ -73,3 +73,4 @@ pre_sum     ret     pre_dict
     4       2       {0:1, 1:1, 2:1, 4:1}
     5       2       {0:1, 1:1, 2:1, 4:1, 5:1}
     10      2       {0:1, 1:1, 2:1, 4:1, 5:1, 10:1}
+```
