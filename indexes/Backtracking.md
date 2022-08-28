@@ -27,11 +27,13 @@ def backtracking(参数):
 # Problems
 1. 子集
 - [78. Subsets](https://leetcode.com/problems/subsets/)
+- [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
 2. 组合
 - [77. Combinations](https://leetcode.com/problems/combinations/)
 - [39. Combination Sum](https://leetcode.com/problems/combination-sum/)
 - [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)
 - [216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)
+- [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
 
 # 时间、空间复杂度分析
