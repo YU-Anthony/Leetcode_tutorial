@@ -26,7 +26,7 @@ Answer:
 Solution 1: Prefix sum + binary search
 At first, we need to create the prefix sum `res`. For each index in `nums`, we need to find the least index `bound` to make `res[bound]-res[i] >= target`. So the range of 
 the shorest continus subarray is `bound-i+1`.
-```
+```python
 res=[0]
 for i in nums:
     res.append(i+res[-1])
