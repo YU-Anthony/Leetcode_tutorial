@@ -23,6 +23,20 @@ def backtracking(参数):
         backtracking(路径，选择列表) # 递归
         回溯，撤销结果
 ```
+```
+res = []
+path = []
+
+def backtrack(未探索区域, res, path):
+    if 未探索区域满足结束条件:
+        res.add(path) # 深度拷贝
+        return
+    for 选择 in 未探索区域当前可能的选择:
+        if 当前选择符合要求:
+            path.add(当前选择)
+            backtrack(新的未探索区域, res, path)
+            path.pop()
+```
 ![](https://code-thinking-1253855093.file.myqcloud.com/pics/20211030124742.png)
 # Problems
 1. 子集
