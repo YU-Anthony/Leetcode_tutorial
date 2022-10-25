@@ -37,3 +37,9 @@
 |[340. Longest Substring with At Most K Distinct Characters](https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters/)|[Link](https://github.com/YU-Anthony/Leetcode_tutorial/blob/main/files/problems1_500/340.%20Longest%20Substring%20with%20At%20Most%20K%20Distinct%20Characters.md)| <font color=yellow> `Medium` </font>|`Amazon`,`Google`|
 |[424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)|[Link](https://github.com/YU-Anthony/Leetcode_tutorial/blob/main/files/problems1_500/424.%20Longest%20Repeating%20Character%20Replacement.md)| <font color=yellow> `Medium` </font>|`Amazon`,`Google`,`ByteDance`,`Uber`|
 
+
+## Sliding window 英文话术
+calculate the sum of a contiguous subarray, we can utilize the sum of the previous subarray. For this, consider each subarray as a Sliding Window of size ‘k.’ To calculate the sum of the next subarray, we need to slide the window ahead by one element. So to slide the window forward and calculate the sum of the new position of the sliding window, we need to do two things:
+
+- Subtract the element going out of the sliding window, i.e., subtract the first element of the window.
+- Add the new element getting included in the sliding window, i.e., the element coming right after the end of the window.
