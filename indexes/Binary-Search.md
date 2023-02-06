@@ -53,6 +53,55 @@ class Solution:
 - Searching Right: `left = mid + 1`
 - 搜寻区间：`左闭右闭`
 
+Here are three different templates for solving binary search problems:
+
+Template #1: Search for a target value in a sorted array
+```python
+def binarySearch(nums, target):
+    left, right = 0, len(nums) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+```
+Template #2: Search for the first occurrence of a target value in a sorted array
+```python
+def binarySearchFirst(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid
+    return left if nums[left] == target else -1
+```
+Template #3: Search for the last occurrence of a target value in a sorted array
+```python
+def binarySearchLast(nums, target):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right + 1) // 2
+        if nums[mid] > target:
+            right = mid - 1
+        else:
+            left = mid
+    return left if nums[left] == target else -1
+```
+The differences between the three templates:
+
+Template #1 is for searching for a target value in a sorted array. It returns the index of the target value if it exists, or -1 if it does not exist.
+
+Template #2 is for searching for the first occurrence of a target value in a sorted array. It returns the index of the first occurrence of the target value if it exists, or -1 if it does not exist.
+
+Template #3 is for searching for the last occurrence of a target value in a sorted array. It returns the index of the last occurrence of the target value if it exists, or -1 if it does not exist.
+
+
 # 常见题目
 | Problems                                                                                                     | Rating                                                                                                                                                                    | Level|Comment|
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ---- |
